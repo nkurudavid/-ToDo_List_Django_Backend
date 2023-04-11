@@ -12,5 +12,5 @@ from .serializers import TaskSerializer
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    authentication_classes = (BaseAuthentication,)
+    # authentication_classes = (BaseAuthentication,)
     permission_classes = (IsAuthenticated,)

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Task(models.Model):
     TODO = 'todo'
-    DONE = 'dome'
+    DONE = 'done'
 
     STATUS_CHOICE = (
         (TODO, 'ToDo'),
@@ -12,8 +12,8 @@ class Task(models.Model):
     title = models.CharField(verbose_name="Task Title", max_length=50, null=False)
     description = models.TextField(verbose_name="Task Description", null=False)
     status = models.CharField(verbose_name="Status", max_length=10, choices=STATUS_CHOICE, default=TODO, null=False)
-    created_date = models.DateField(verbose_name="When Created", auto_now_add=True)
-    modified_date = models.DateField(verbose_name="When Modified", auto_now=True)
+    created_date = models.DateTimeField(verbose_name="When Created", auto_now_add=True)
+    modified_date = models.DateTimeField(verbose_name="When Modified", auto_now=True)
 
     def __str__(self):
         return self.title
