@@ -28,3 +28,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
+
+admin.site.site_header = "Vuengo ToDo App"
+admin.site.site_title = "Admin Panel"
+admin.site.index_title = "Management"
